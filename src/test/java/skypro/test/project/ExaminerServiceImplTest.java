@@ -9,6 +9,8 @@ import org.mockito.stubbing.OngoingStubbing;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
@@ -19,6 +21,9 @@ public class ExaminerServiceImplTest {
     private Question question1;
     private Question question2;
     private Question question3;
+    private int valueNum10;
+    private int valueNum0;
+
     @BeforeEach
     public void init() {
         questionService = Mockito.mock(QuestionService.class);
@@ -60,6 +65,17 @@ public class ExaminerServiceImplTest {
         Assertions.assertEquals(3, questions.size());
         Mockito.verify(questionService, times(6)).getRandomQuestion();
     }
+
+    @Test
+    public void shouldThrowIllegalArgumentExceptionWhenNum2HaveNullValue() {
+
+        assertThrows(IllegalArgumentException.class, () -> out.wait(valueNum10, valueNum0));
+
+    }
+
+    }
+
+
 
 
 
