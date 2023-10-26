@@ -67,7 +67,7 @@ public class ExaminerServiceImplTest {
     }
 
     @Test
-    public void shouldThrowIllegalArgumentExceptionWhenNum2HaveNullValue() {
+     void shouldThrowIllegalArgumentExceptionWhenNum2HaveNullValue() {
 
         assertThrows(IllegalArgumentException.class, () -> out.wait(valueNum10, valueNum0));
 //
